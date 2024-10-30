@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "769003466789",
+    "project_id": "meubolso-27ddf",
+    "storage_bucket": "meubolso-27ddf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769003466789:android:8ff2cfc56e6aa850a90fcc",
+        "android_client_info": {
+          "package_name": "com.MeuBolso"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4YBErZZrRKTL0wTakHsICa9vd0h5KTGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
