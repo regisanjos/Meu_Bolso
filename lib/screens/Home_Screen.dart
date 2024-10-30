@@ -24,23 +24,23 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  // Função para buscar despesas com filtros, ordenação e mês selecionado
+  
   Stream<QuerySnapshot> _getFilteredExpenses() {
     Query query = _firestore.collection('expenses');
 
-    // Filtra por categoria, se uma categoria estiver selecionada
+    
     if (_selectedCategory != null && _selectedCategory!.isNotEmpty) {
       query = query.where('category', isEqualTo: _selectedCategory);
     }
 
-    // Filtra pelo mês e ano selecionado
+    
     query = query.where(
       'date',
       isGreaterThanOrEqualTo: DateTime(_selectedDate.year, _selectedDate.month, 1),
       isLessThan: DateTime(_selectedDate.year, _selectedDate.month + 1, 1),
     );
 
-    // Ordena pela opção selecionada (valor ou data)
+  
     if (_sortOption == 'Valor') {
       query = query.orderBy('value', descending: true);
     } else if (_sortOption == 'Data') {
@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return query.snapshots();
   }
 
-  // Função para mudar o mês selecionado
+  
   void _selectMonth(DateTime selectedDate) {
     setState(() {
       _selectedDate = selectedDate;
@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
                 
-                // Dropdown para Filtragem por Categoria
+                
                 DropdownButton<String>(
                   hint: Text('Categoria'),
                   value: _selectedCategory,
@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     DropdownMenuItem(value: 'Transporte', child: Text('Transporte')),
                     DropdownMenuItem(value: 'Lazer', child: Text('Lazer')),
                     DropdownMenuItem(value: 'Saúde', child: Text('Saúde')),
-                    // Adicione outras categorias conforme necessário
+                    
                   ],
                   onChanged: (value) {
                     setState(() {
@@ -116,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                 ),
 
-                // Menu de Ordenação
+               
                 DropdownButton<String>(
                   value: _sortOption,
                   items: [

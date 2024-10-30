@@ -15,7 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordController = TextEditingController();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  // Função para login com email/senha
+  
   void _login() async {
     try {
       await _auth.signInWithEmailAndPassword(
@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  // Função para login com Google
+
   Future<void> _loginWithGoogle() async {
     try {
       final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  // Função para login com Facebook
+  
   Future<void> _loginWithFacebook() async {
     try {
       final LoginResult result = await FacebookAuth.instance.login();

@@ -13,7 +13,7 @@ class Expense {
     required this.date,
   });
 
-  // Construtor para conversão de dados do Firebase para objeto Expense
+  
   factory Expense.fromFirestore(Map<String, dynamic> data, String id) {
     return Expense(
       id: id,
@@ -24,7 +24,7 @@ class Expense {
     );
   }
 
-  // Conversão do objeto Expense para um mapa para salvar no Firebase
+ 
   Map<String, dynamic> toMap() {
     return {
       'title': title,

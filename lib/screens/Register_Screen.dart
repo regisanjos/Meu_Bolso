@@ -15,7 +15,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  // Função para registrar o usuário
+  
   void _register() async {
     if (_passwordController.text == _confirmPasswordController.text) {
       try {
